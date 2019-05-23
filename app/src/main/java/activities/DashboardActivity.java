@@ -1,7 +1,9 @@
-package br.com.beirario.campeonatovt;
+package activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import br.com.beirario.campeonatovt.R;
 
 public class DashboardActivity extends AppCompatActivity {
 
