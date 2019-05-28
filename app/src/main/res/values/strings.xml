@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Campeonato VT</string>
+    <string name="txt_campeonatos_criados">Campeonatos criados:</string>
+    <string name="title_championships">Campeonatos</string>
 </resources>
