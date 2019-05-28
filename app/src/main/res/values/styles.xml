@@ -20,4 +20,10 @@
         <item name="android:textSize">16sp</item>
     </style>
 
+    <style name="AppTheme.Button">
+        <item name="android:background">#FFFFFFFF</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
 </resources>

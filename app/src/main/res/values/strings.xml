@@ -2,4 +2,9 @@
     <string name="app_name">Campeonato VT</string>
     <string name="txt_campeonatos_criados">Campeonatos criados:</string>
     <string name="title_championships">Campeonatos</string>
+    <string name="title_criar_campeonato">Criar campeonato</string>
+    <string name="body1_create_championship">Escolha um nome para o seu novo campeonato.</string>
+    <string name="body2_create_championship">Escolha o tipo de descarte adotado pelo campeonato.</string>
+    <string name="btn_create">Criar</string>
+    <string name="btn_cancel">Cancelar</string>
 </resources>
