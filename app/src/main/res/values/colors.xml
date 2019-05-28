@@ -5,5 +5,5 @@
     <color name="colorAccent">#d1432b</color>
     <color name="colorGrey">#424242</color>
     <color name="colorSelectionGrey">#f5f5f5</color>
-    <color name="list_view_background">#1F000000</color>
+    <color name="list_view_background">#05000000</color>
 </resources>
