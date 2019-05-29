@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="280dp"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="280dp"
     android:layout_height="wrap_content"
     android:background="@android:color/white"
     android:paddingTop="16dp"
@@ -26,12 +26,16 @@
         android:layout_marginEnd="8dp"
         style="@style/AppTheme.TextView.Body"
         android:text="@string/body1_create_championship"/>
-    
+
     <EditText
+        android:id="@+id/edt_championship"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"/>
+        android:layout_marginEnd="8dp"
+        android:hint="@string/hint_championship"
+        android:inputType="textCapWords"
+        tools:ignore="Autofill" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -42,33 +46,9 @@
         android:text="@string/body2_create_championship"/>
 
     <Spinner
+        android:id="@+id/spn_discard"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"/>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_gravity="end">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            style="@style/AppTheme.Button"
-            android:text="@string/btn_cancel"/>
-
-        <Button
-            style="@style/AppTheme.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/btn_create" />
-
-    </LinearLayout>
-
-
-
-
 </LinearLayout>

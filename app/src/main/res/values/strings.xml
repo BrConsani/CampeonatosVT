@@ -7,4 +7,5 @@
     <string name="body2_create_championship">Escolha o tipo de descarte adotado pelo campeonato.</string>
     <string name="btn_create">Criar</string>
     <string name="btn_cancel">Cancelar</string>
+    <string name="hint_championship">Campeonato</string>
 </resources>

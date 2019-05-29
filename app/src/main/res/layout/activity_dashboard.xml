@@ -5,39 +5,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="activities.DashboardActivity"
-    android:padding="16dp">
+    tools:context="activities.DashboardActivity">
 
     <TextView
         android:id="@+id/textView"
+        style="@style/AppTheme.TextView.Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/txt_campeonatos_criados"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        style="@style/AppTheme.TextView.Title"
-        android:text="@string/txt_campeonatos_criados"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:background="@color/list_view_background"
         android:listSelector="@color/colorSelectionGrey"
-        app:layout_constraintBottom_toTopOf="@+id/fab_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:listitem="@layout/textview_list_item"/>
+        tools:listitem="@layout/textview_list_item" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_add"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:src="@drawable/ic_add"
-        android:tint="@android:color/white"
-        android:background="@drawable/fab_red_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="onClickAddButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:elevation="6dp"/>
+        app:srcCompat="@drawable/ic_add"
+        app:tint="@android:color/white"
+        app:useCompatPadding="true" />
 
 </android.support.constraint.ConstraintLayout>
