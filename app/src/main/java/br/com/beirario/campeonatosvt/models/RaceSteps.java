@@ -1,5 +1,7 @@
 package br.com.beirario.campeonatosvt.models;
 
+import android.support.annotation.NonNull;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,5 +38,11 @@ class RaceSteps implements Serializable {
 
     public void addRaces(Race race){
         races.add(race);
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return getName();
     }
 }

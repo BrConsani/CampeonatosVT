@@ -1,5 +1,7 @@
 package br.com.beirario.campeonatosvt.models;
 
+import android.support.annotation.NonNull;
+
 import java.io.Serializable;
 
 public class Pilot implements Serializable {
@@ -16,5 +18,11 @@ public class Pilot implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return getName();
     }
 }

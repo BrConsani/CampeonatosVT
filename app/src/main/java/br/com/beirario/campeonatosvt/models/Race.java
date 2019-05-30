@@ -1,5 +1,7 @@
 package br.com.beirario.campeonatosvt.models;
 
+import android.support.annotation.NonNull;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,5 +43,11 @@ class Race implements Serializable {
 
     public List<Integer> getPointsPosition(){
         return pointsPosition;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return getName();
     }
 }
