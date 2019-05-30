@@ -8,6 +8,9 @@ import br.com.beirario.campeonatosvt.models.Championship;
 
 public class Program implements Serializable {
 
+    public static String ID_CHAMPIONSHIP = "id_championship";
+
+
     private static Program mInstance;
 
     private List<Championship> championships = new ArrayList<>();

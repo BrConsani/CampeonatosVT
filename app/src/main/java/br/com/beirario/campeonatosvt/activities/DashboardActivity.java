@@ -30,12 +30,14 @@ public class DashboardActivity extends AppCompatActivity {
     }
 
     public void onClickAddButton(View view){
-        Dialog d = Views.createChampionshipDialog(this, ((dialog, which) -> {
-            EditText name = ((AlertDialog) dialog).findViewById(R.id.edt_championship);
-            Program.getInstance().addChampionship(new Championship(name.getText().toString()));
-            adapter.notifyItemInserted(adapter.getItemCount());
-            dialog.dismiss();
-        }));
-        d.show();
+        Views.DialogBuilder builder = new Views.DialogBuilder(this, R.layout.dialog_create_championship, true);
+        builder.setPositiveButton(R.string.btn_create,
+                (dialog, which) -> {
+                    EditText name = ((AlertDialog) dialog).findViewById(R.id.edt_championship);
+                    Program.getInstance().addChampionship(new Championship(name.getText().toString()));
+                    adapter.notifyItemInserted(adapter.getItemCount());
+                    dialog.dismiss();
+        });
+        builder.buildDialog().show();
     }
 }
