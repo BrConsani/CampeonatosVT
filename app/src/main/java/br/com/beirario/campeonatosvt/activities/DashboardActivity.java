@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import br.com.beirario.campeonatosvt.Program;
+import br.com.beirario.campeonatosvt.adapters.ChampionshipAdapter;
 import br.com.beirario.campeonatosvt.adapters.OneLineAdapter;
 import br.com.beirario.campeonatosvt.models.Championship;
 import br.com.beirario.campeonatosvt.ui.Views;
@@ -17,14 +18,12 @@ import br.com.beirario.campeonatovt.R;
 
 public class DashboardActivity extends AppCompatActivity {
 
-    private OneLineAdapter adapter = new OneLineAdapter<>(Program.getInstance().getChampionships(),
-            (view) -> {}, (view) -> true);
+    private OneLineAdapter adapter = new ChampionshipAdapter(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-
         RecyclerView recyclerView = findViewById(R.id.list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
@@ -36,7 +35,7 @@ public class DashboardActivity extends AppCompatActivity {
             Program.getInstance().addChampionship(new Championship(name.getText().toString()));
             adapter.notifyItemInserted(adapter.getItemCount());
             dialog.dismiss();
-        }), (dialog, which) -> dialog.dismiss());
+        }));
         d.show();
     }
 }

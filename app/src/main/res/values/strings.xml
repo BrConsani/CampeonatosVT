@@ -8,4 +8,6 @@
     <string name="btn_create">Criar</string>
     <string name="btn_cancel">Cancelar</string>
     <string name="hint_championship">Campeonato</string>
+    <string name="body1_remove_championship">Você realmente deseja remover o campeonato?</string>
+    <string name="btn_remove">Remover</string>
 </resources>
