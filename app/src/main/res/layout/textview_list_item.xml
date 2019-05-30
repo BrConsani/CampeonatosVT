@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="48dp"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@android:color/white">
+    android:foreground="?android:selectableItemBackground"
+    android:background="@android:color/white"
+    tools:ignore="UnusedAttribute">
 
     <TextView
         android:id="@+id/textView"
