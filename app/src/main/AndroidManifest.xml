@@ -18,6 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="br.com.beirario.campeonatosvt.activities.StepsActivity"
+            android:label="@string/title_steps"/>
     </application>
 
 </manifest>
