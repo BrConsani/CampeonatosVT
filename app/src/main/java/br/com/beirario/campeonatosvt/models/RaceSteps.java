@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-class RaceSteps implements Serializable {
+public class RaceSteps implements Serializable {
 
     private String name;
     private List<Race> races = new ArrayList<>();

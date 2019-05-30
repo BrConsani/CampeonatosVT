@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-class Race implements Serializable {
+public class Race implements Serializable {
 
     private String name;
     private String stepName;
