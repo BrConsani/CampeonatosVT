@@ -1,8 +1,10 @@
+package br.com.beirario.campeonatosvt;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import models.Championship;
+import br.com.beirario.campeonatosvt.models.Championship;
 
 public class Program implements Serializable {
 

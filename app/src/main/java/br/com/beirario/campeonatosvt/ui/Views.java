@@ -1,4 +1,4 @@
-package ui;
+package br.com.beirario.campeonatosvt.ui;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -23,6 +23,4 @@ public class Views {
         builder.setNegativeButton(R.string.btn_cancel, negativeListener);
         return builder.create();
     }
-
-
 }

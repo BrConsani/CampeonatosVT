@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:allowBackup="false">
-        <activity android:name="activities.DashboardActivity"
+        <activity android:name="br.com.beirario.campeonatosvt.activities.DashboardActivity"
             android:label="@string/title_championships">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

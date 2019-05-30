@@ -1,4 +1,4 @@
-package models;
+package br.com.beirario.campeonatosvt.models;
 
 import java.io.Serializable;
 import java.util.ArrayList;
