@@ -15,4 +15,5 @@
     <string name="body1_choose_name_step">Escolha um nome para sua nova etapa.</string>
     <string name="title_create_step">Criar etapa</string>
     <string name="hint_step">Etapa</string>
+    <string name="body1_remove_step">Você realmente deseja remover a etapa?</string>
 </resources>
