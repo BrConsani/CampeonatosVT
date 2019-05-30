@@ -10,6 +10,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.EditText;
 
+import java.util.Objects;
+
 import br.com.beirario.campeonatosvt.Program;
 import br.com.beirario.campeonatosvt.adapters.OneLineAdapter;
 import br.com.beirario.campeonatosvt.adapters.StepAdapter;
@@ -27,6 +29,9 @@ public class StepsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_steps);
+
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         Intent intent = getIntent();
         int indexChampionship = intent.getIntExtra(Program.ID_CHAMPIONSHIP, -1);
@@ -48,5 +53,17 @@ public class StepsActivity extends AppCompatActivity {
             adapter.notifyItemInserted(adapter.getItemCount());
         }));
         builder.buildDialog().show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_in_inverse, R.anim.slide_out_inverse);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }
