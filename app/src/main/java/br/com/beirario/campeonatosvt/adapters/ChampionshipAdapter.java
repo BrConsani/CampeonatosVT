@@ -22,7 +22,7 @@ public class ChampionshipAdapter extends OneLineAdapter<Championship> {
     @Override
     public void onClick(View view, int i) {
         Intent intent = new Intent(context, StepsActivity.class);
-        intent.putExtra(Program.ID_CHAMPIONSHIP, i);
+        intent.putExtra(Program.ID_CHAMPIONSHIP, Program.getInstance().getChampionships().get(i));
         context.startActivity(intent);
         context.overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
     }

@@ -9,7 +9,7 @@ import br.com.beirario.campeonatosvt.models.Championship;
 public class Program implements Serializable {
 
     public static String ID_CHAMPIONSHIP = "id_championship";
-
+    public static String ID_STEP = "id_step";
 
     private static Program mInstance;
 

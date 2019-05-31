@@ -3,15 +3,18 @@ package br.com.beirario.campeonatosvt.models;
 import android.support.annotation.NonNull;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 public class Race implements Serializable {
 
     private String name;
-    private String stepName;
-    private List<Pilot> pilotsPosition = new ArrayList<>();
-    private List<Integer> pointsPosition = new ArrayList<>();
+    private Map<Pilot, Integer> positions = new HashMap<>();
+    private Pilot fastTurn;
 
     public Race(String name){
         this.name = name;
@@ -21,33 +24,46 @@ public class Race implements Serializable {
         return name;
     }
 
-    public String getStep(){
-        return stepName;
+    public Map<Pilot, Integer> getPositions() {
+        return orderDescend();
     }
 
-    public void setStep(RaceSteps step){
-        this.stepName = step.getName();
+    public void addPilot(Pilot pilot){
+        positions.put(pilot, 0);
     }
 
-    public void addPilot(Pilot pilot, int position){
-        pilotsPosition.set(position, pilot);
+    public void removePilot(Pilot pilot){
+        positions.remove(pilot);
     }
 
-    public void addPoints(int points, int position){
-        pointsPosition.set(position, points);
+    public void changePoints(Pilot pilot, int points){
+        if(positions.containsKey(pilot)){
+            positions.put(pilot, points);
+        }
     }
 
-    public List<Pilot> getPilotsPosition(){
-        return pilotsPosition;
+    public Pilot getFastTurn() {
+        return fastTurn;
     }
 
-    public List<Integer> getPointsPosition(){
-        return pointsPosition;
+    public void setFastTurn(Pilot fastTurn) {
+        this.fastTurn = fastTurn;
     }
 
     @NonNull
     @Override
     public String toString() {
         return getName();
+    }
+
+    private Map<Pilot, Integer> orderDescend(){
+        List<Map.Entry<Pilot, Integer>> list = new LinkedList<>(positions.entrySet());
+        Collections.sort(list, (o1, o2) -> o2.getValue().compareTo(o1.getValue()));
+        // Maintaining insertion order with the help of LinkedList
+        Map<Pilot, Integer> sortedMap = new LinkedHashMap<>();
+        for (Map.Entry<Pilot, Integer> entry : list) {
+            sortedMap.put(entry.getKey(), entry.getValue());
+        }
+        return sortedMap;
     }
 }
