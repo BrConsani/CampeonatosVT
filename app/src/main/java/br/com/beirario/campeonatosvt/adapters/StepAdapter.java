@@ -32,7 +32,7 @@ public class StepAdapter extends OneLineAdapter<Step> {
 
     @Override
     public boolean onLongClick(View view, Step o) {
-        Views.DialogBuilder builder = new Views.DialogBuilder(context, R.string.body1_remove_step);
+        Views.DialogBuilder builder = new Views.MessageDialog(context, R.string.body1_remove_step);
         builder.setPositiveButton(R.string.btn_remove, ((dialog, which) -> {
             championship.removeStep(o);
             notifyItemRemoved(championship.getSteps().indexOf(o));

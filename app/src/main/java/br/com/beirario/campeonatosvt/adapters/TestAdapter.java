@@ -27,7 +27,7 @@ public class TestAdapter extends OneLineAdapter<Test> {
 
     @Override
     public boolean onLongClick(View view, Test o) {
-        Views.DialogBuilder builder = new Views.DialogBuilder(context, R.string.body1_remove_step);
+        Views.DialogBuilder builder = new Views.MessageDialog(context, R.string.body1_remove_test);
         builder.setPositiveButton(R.string.btn_remove, ((dialog, which) -> {
             step.removeTest(o);
             notifyItemRemoved(step.getTests().indexOf(o));

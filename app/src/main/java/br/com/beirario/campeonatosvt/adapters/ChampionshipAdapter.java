@@ -29,7 +29,7 @@ public class ChampionshipAdapter extends OneLineAdapter<Championship> {
 
     @Override
     public boolean onLongClick(View view, Championship o) {
-        Views.DialogBuilder builder = new Views.DialogBuilder(context, R.string.body1_remove_championship);
+        Views.DialogBuilder builder = new Views.MessageDialog(context, R.string.body1_remove_championship);
         builder.setPositiveButton(R.string.btn_remove ,(dialog, which) -> {
             Program.getInstance().removeChampionship(o);
             this.notifyItemRemoved(Program.getInstance().getChampionships().indexOf(o));

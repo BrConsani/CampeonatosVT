@@ -24,4 +24,5 @@
     <string name="title_create_test">Criar prova</string>
     <string name="body1_create_test">Escolha um nome para sua nova prova.</string>
     <string name="hint_test">Prova</string>
+    <string name="body1_remove_test">Você realmente deseja remover a prova?</string>
 </resources>

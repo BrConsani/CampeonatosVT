@@ -25,14 +25,6 @@ public class Views {
             this.context = context;
         }
 
-        //Default dialog constructor
-        public DialogBuilder(AppCompatActivity context, @StringRes int message) {
-            this.context = context;
-            builder = new AlertDialog.Builder(context);
-            builder.setMessage(message);
-            setNegativeButton(R.string.btn_cancel, (dialog, which) -> dialog.dismiss());
-        }
-
         //Custom dialog constructor with Resource Layout
         public DialogBuilder(AppCompatActivity context,  @LayoutRes int layout, boolean customLayout) {
             this.context = context;
@@ -71,6 +63,18 @@ public class Views {
             super.builder.setView(view);
             setNegativeButton(R.string.btn_cancel, (dialog, which) -> dialog.dismiss());
         }
+
+    }
+
+    public static class MessageDialog extends DialogBuilder{
+
+        public MessageDialog(AppCompatActivity context, @StringRes int message) {
+            super(context);
+            super.builder = new AlertDialog.Builder(context);
+            super.builder.setMessage(message);
+            setNegativeButton(R.string.btn_cancel, (dialog, which) -> dialog.dismiss());
+        }
+
     }
 
 
