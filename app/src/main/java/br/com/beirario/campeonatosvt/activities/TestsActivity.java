@@ -12,11 +12,10 @@ import java.util.Objects;
 
 import br.com.beirario.campeonatosvt.Program;
 import br.com.beirario.campeonatosvt.adapters.OneLineAdapter;
-import br.com.beirario.campeonatosvt.adapters.StepAdapter;
 import br.com.beirario.campeonatosvt.adapters.TestAdapter;
 import br.com.beirario.campeonatosvt.models.Step;
 import br.com.beirario.campeonatosvt.models.Test;
-import br.com.beirario.campeonatosvt.ui.Views;
+import br.com.beirario.campeonatosvt.ui.Dialogs;
 import br.com.beirario.campeonatovt.R;
 
 public class TestsActivity extends AppCompatActivity {
@@ -43,7 +42,7 @@ public class TestsActivity extends AppCompatActivity {
     }
 
     public void OnClickAddButton(View view){
-        Views.DialogBuilder builder = new Views.OneEditTextDialog(this, R.string.title_create_tests,
+        Dialogs.DialogBuilder builder = new Dialogs.OneEditTextDialog(this, R.string.title_create_tests,
                 R.string.body1_create_test, R.string.hint_test);
         builder.setPositiveButton(R.string.btn_create, ((dialog, which) -> {
             EditText name = ((AlertDialog) dialog).findViewById(R.id.edt_default);

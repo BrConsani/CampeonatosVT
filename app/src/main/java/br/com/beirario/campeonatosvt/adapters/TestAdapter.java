@@ -1,12 +1,11 @@
 package br.com.beirario.campeonatosvt.adapters;
 
-import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import br.com.beirario.campeonatosvt.models.Step;
 import br.com.beirario.campeonatosvt.models.Test;
-import br.com.beirario.campeonatosvt.ui.Views;
+import br.com.beirario.campeonatosvt.ui.Dialogs;
 import br.com.beirario.campeonatovt.R;
 
 public class TestAdapter extends OneLineAdapter<Test> {
@@ -27,7 +26,7 @@ public class TestAdapter extends OneLineAdapter<Test> {
 
     @Override
     public boolean onLongClick(View view, Test o) {
-        Views.DialogBuilder builder = new Views.MessageDialog(context, R.string.body1_remove_test);
+        Dialogs.DialogBuilder builder = new Dialogs.MessageDialog(context, R.string.body1_remove_test);
         builder.setPositiveButton(R.string.btn_remove, ((dialog, which) -> {
             step.removeTest(o);
             notifyItemRemoved(step.getTests().indexOf(o));

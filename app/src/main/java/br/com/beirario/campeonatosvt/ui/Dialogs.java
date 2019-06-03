@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import br.com.beirario.campeonatovt.R;
 
-public class Views {
+public class Dialogs {
 
     public static class DialogBuilder{
 

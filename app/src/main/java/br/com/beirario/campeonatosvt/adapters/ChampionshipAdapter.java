@@ -7,7 +7,7 @@ import android.view.View;
 import br.com.beirario.campeonatosvt.Program;
 import br.com.beirario.campeonatosvt.activities.StepsActivity;
 import br.com.beirario.campeonatosvt.models.Championship;
-import br.com.beirario.campeonatosvt.ui.Views;
+import br.com.beirario.campeonatosvt.ui.Dialogs;
 import br.com.beirario.campeonatovt.R;
 
 public class ChampionshipAdapter extends OneLineAdapter<Championship> {
@@ -29,7 +29,7 @@ public class ChampionshipAdapter extends OneLineAdapter<Championship> {
 
     @Override
     public boolean onLongClick(View view, Championship o) {
-        Views.DialogBuilder builder = new Views.MessageDialog(context, R.string.body1_remove_championship);
+        Dialogs.DialogBuilder builder = new Dialogs.MessageDialog(context, R.string.body1_remove_championship);
         builder.setPositiveButton(R.string.btn_remove ,(dialog, which) -> {
             Program.getInstance().removeChampionship(o);
             this.notifyItemRemoved(Program.getInstance().getChampionships().indexOf(o));

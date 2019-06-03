@@ -8,7 +8,7 @@ import br.com.beirario.campeonatosvt.Program;
 import br.com.beirario.campeonatosvt.activities.TestsActivity;
 import br.com.beirario.campeonatosvt.models.Championship;
 import br.com.beirario.campeonatosvt.models.Step;
-import br.com.beirario.campeonatosvt.ui.Views;
+import br.com.beirario.campeonatosvt.ui.Dialogs;
 import br.com.beirario.campeonatovt.R;
 
 public class StepAdapter extends OneLineAdapter<Step> {
@@ -32,7 +32,7 @@ public class StepAdapter extends OneLineAdapter<Step> {
 
     @Override
     public boolean onLongClick(View view, Step o) {
-        Views.DialogBuilder builder = new Views.MessageDialog(context, R.string.body1_remove_step);
+        Dialogs.DialogBuilder builder = new Dialogs.MessageDialog(context, R.string.body1_remove_step);
         builder.setPositiveButton(R.string.btn_remove, ((dialog, which) -> {
             championship.removeStep(o);
             notifyItemRemoved(championship.getSteps().indexOf(o));

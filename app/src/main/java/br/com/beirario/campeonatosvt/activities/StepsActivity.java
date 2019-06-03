@@ -16,7 +16,7 @@ import br.com.beirario.campeonatosvt.adapters.OneLineAdapter;
 import br.com.beirario.campeonatosvt.adapters.StepAdapter;
 import br.com.beirario.campeonatosvt.models.Championship;
 import br.com.beirario.campeonatosvt.models.Step;
-import br.com.beirario.campeonatosvt.ui.Views;
+import br.com.beirario.campeonatosvt.ui.Dialogs;
 import br.com.beirario.campeonatovt.R;
 
 public class StepsActivity extends AppCompatActivity {
@@ -43,7 +43,7 @@ public class StepsActivity extends AppCompatActivity {
     }
 
     public void OnClickAddButton(View view){
-        Views.DialogBuilder builder = new Views.OneEditTextDialog(this,
+        Dialogs.DialogBuilder builder = new Dialogs.OneEditTextDialog(this,
                 R.string.title_create_step, R.string.body1_create_step, R.string.hint_step);
         builder.setPositiveButton(R.string.btn_create, ((dialog, which) -> {
             EditText name = ((AlertDialog) dialog).findViewById(R.id.edt_default);
