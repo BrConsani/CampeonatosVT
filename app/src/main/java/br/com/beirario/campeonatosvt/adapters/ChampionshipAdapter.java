@@ -20,19 +20,19 @@ public class ChampionshipAdapter extends OneLineAdapter<Championship> {
     }
 
     @Override
-    public void onClick(View view, int i) {
+    public void onClick(View view, Championship o) {
         Intent intent = new Intent(context, StepsActivity.class);
-        intent.putExtra(Program.ID_CHAMPIONSHIP, Program.getInstance().getChampionships().get(i));
+        intent.putExtra(Program.ID_CHAMPIONSHIP, o);
         context.startActivity(intent);
         context.overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
     }
 
     @Override
-    public boolean onLongClick(View view, int i) {
+    public boolean onLongClick(View view, Championship o) {
         Views.DialogBuilder builder = new Views.DialogBuilder(context, R.string.body1_remove_championship);
         builder.setPositiveButton(R.string.btn_remove ,(dialog, which) -> {
-            Program.getInstance().removeChampionship(i);
-            this.notifyItemRemoved(i);
+            Program.getInstance().removeChampionship(o);
+            this.notifyItemRemoved(Program.getInstance().getChampionships().indexOf(o));
         });
         builder.buildDialog().show();
         return true;

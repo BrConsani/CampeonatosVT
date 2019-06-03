@@ -44,8 +44,4 @@ public class Program implements Serializable {
     public void removeChampionship(Championship championship){
         championships.remove(championship);
     }
-
-    public void removeChampionship(int index){
-        championships.remove(index);
-    }
 }

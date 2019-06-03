@@ -9,11 +9,11 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import br.com.beirario.campeonatosvt.interfaces.Listener;
+import br.com.beirario.campeonatosvt.interfaces.ListenerInterface;
 import br.com.beirario.campeonatovt.R;
 
 public abstract class OneLineAdapter<T> extends RecyclerView.Adapter<OneLineViewHolder>
-        implements Listener.onClickListener {
+        implements ListenerInterface.onClickListener<T> {
 
     private List<T> items;
 
@@ -31,8 +31,8 @@ public abstract class OneLineAdapter<T> extends RecyclerView.Adapter<OneLineView
     @Override
     public void onBindViewHolder(@NonNull OneLineViewHolder holder, int i) {
         holder.textView.setText(items.get(i).toString());
-        holder.parent.setOnClickListener((view) -> this.onClick(view, i));
-        holder.parent.setOnLongClickListener((view -> this.onLongClick(view, i)));
+        holder.parent.setOnClickListener((view) -> this.onClick(view, items.get(i)));
+        holder.parent.setOnLongClickListener((view -> this.onLongClick(view, items.get(i))));
     }
 
     @Override

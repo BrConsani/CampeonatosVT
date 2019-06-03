@@ -23,19 +23,19 @@ public class StepAdapter extends OneLineAdapter<Step> {
     }
 
     @Override
-    public void onClick(View view, int i) {
+    public void onClick(View view, Step o) {
         Intent intent = new Intent(context, TestsActivity.class);
-        intent.putExtra(Program.ID_STEP, championship.getSteps().get(i));
+        intent.putExtra(Program.ID_STEP, o);
         context.startActivity(intent);
         context.overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
     }
 
     @Override
-    public boolean onLongClick(View view, int i) {
+    public boolean onLongClick(View view, Step o) {
         Views.DialogBuilder builder = new Views.DialogBuilder(context, R.string.body1_remove_step);
         builder.setPositiveButton(R.string.btn_remove, ((dialog, which) -> {
-            championship.removeStep(championship.getSteps().get(i));
-            notifyItemRemoved(i);
+            championship.removeStep(o);
+            notifyItemRemoved(championship.getSteps().indexOf(o));
         }));
         builder.buildDialog().show();
         return false;
