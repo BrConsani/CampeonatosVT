@@ -25,15 +25,6 @@ public class Views {
             this.context = context;
         }
 
-        //Custom dialog constructor with Resource Layout
-        public DialogBuilder(AppCompatActivity context,  @LayoutRes int layout, boolean customLayout) {
-            this.context = context;
-            builder = new AlertDialog.Builder(context);
-            LayoutInflater inflater = context.getLayoutInflater();
-            builder.setView(inflater.inflate(layout, null));
-            setNegativeButton(R.string.btn_cancel, (dialog, which) -> dialog.dismiss());
-        }
-
         public void setPositiveButton(@StringRes int label, DialogInterface.OnClickListener listener){
             builder.setPositiveButton(label, listener);
         }
@@ -75,6 +66,17 @@ public class Views {
             setNegativeButton(R.string.btn_cancel, (dialog, which) -> dialog.dismiss());
         }
 
+    }
+
+    public static class CustomLayoutDialog extends DialogBuilder{
+
+        public CustomLayoutDialog(AppCompatActivity context, @LayoutRes int layout) {
+            super(context);
+            super.builder = new AlertDialog.Builder(context);
+            LayoutInflater inflater = context.getLayoutInflater();
+            super.builder.setView(inflater.inflate(layout, null));
+            setNegativeButton(R.string.btn_cancel, (dialog, which) -> dialog.dismiss());
+        }
     }
 
 

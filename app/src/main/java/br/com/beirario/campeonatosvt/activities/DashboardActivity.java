@@ -30,7 +30,7 @@ public class DashboardActivity extends AppCompatActivity {
     }
 
     public void onClickAddButton(View view){
-        Views.DialogBuilder builder = new Views.DialogBuilder(this, R.layout.dialog_create_championship, true);
+        Views.DialogBuilder builder = new Views.CustomLayoutDialog(this, R.layout.dialog_create_championship);
         builder.setPositiveButton(R.string.btn_create,
                 (dialog, which) -> {
                     EditText name = ((AlertDialog) dialog).findViewById(R.id.edt_championship);
