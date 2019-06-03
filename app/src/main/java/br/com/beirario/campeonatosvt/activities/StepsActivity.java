@@ -1,7 +1,6 @@
 package br.com.beirario.campeonatosvt.activities;
 
 import android.app.AlertDialog;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -16,7 +15,7 @@ import br.com.beirario.campeonatosvt.Program;
 import br.com.beirario.campeonatosvt.adapters.OneLineAdapter;
 import br.com.beirario.campeonatosvt.adapters.StepAdapter;
 import br.com.beirario.campeonatosvt.models.Championship;
-import br.com.beirario.campeonatosvt.models.RaceStep;
+import br.com.beirario.campeonatosvt.models.Step;
 import br.com.beirario.campeonatosvt.ui.Views;
 import br.com.beirario.campeonatovt.R;
 
@@ -34,7 +33,7 @@ public class StepsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         Championship o = (Championship) getIntent().getSerializableExtra(Program.ID_CHAMPIONSHIP);
-        championship = Program.getInstance().getChampionships().get(Program.getInstance().getChampionships().indexOf(o));
+        championship = Program.getInstance().getChampionship(o);
 
         adapter = new StepAdapter(this, championship);
 
@@ -44,10 +43,11 @@ public class StepsActivity extends AppCompatActivity {
     }
 
     public void OnClickAddButton(View view){
-        Views.DialogBuilder builder = new Views.DialogBuilder(this, R.layout.dialog_create_step, true);
+        Views.DialogBuilder builder = new Views.OneEditTextDialog(this,
+                R.string.title_create_step, R.string.body1_create_step, R.string.hint_step);
         builder.setPositiveButton(R.string.btn_create, ((dialog, which) -> {
-            EditText name = ((AlertDialog) dialog).findViewById(R.id.edt_step);
-            championship.addStep(new RaceStep(name.getText().toString()));
+            EditText name = ((AlertDialog) dialog).findViewById(R.id.edt_default);
+            championship.addStep(new Step(name.getText().toString(), championship));
             adapter.notifyItemInserted(adapter.getItemCount());
         }));
         builder.buildDialog().show();

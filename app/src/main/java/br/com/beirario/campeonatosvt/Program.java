@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.beirario.campeonatosvt.models.Championship;
+import br.com.beirario.campeonatosvt.models.Step;
 
 public class Program implements Serializable {
 
@@ -24,6 +25,16 @@ public class Program implements Serializable {
 
     public List<Championship> getChampionships() {
         return championships;
+    }
+
+    public Championship getChampionship(Championship o){
+        return getChampionships().get(getChampionships().indexOf(o));
+    }
+
+    public Step getStep(Step o){
+        Championship c = getChampionship(o.getParent());
+        List<Step> steps = c.getSteps();
+        return steps.get(steps.indexOf(o));
     }
 
     public void addChampionship(Championship championship){

@@ -10,7 +10,7 @@ import java.util.Objects;
 public class Championship implements Serializable {
 
     private String name;
-    private List<RaceStep> steps = new ArrayList<>();
+    private List<Step> steps = new ArrayList<>();
     private List<Pilot> pilots  = new ArrayList<>();
     private Discard discard = new Discard(2,2);
 
@@ -22,15 +22,15 @@ public class Championship implements Serializable {
         return this.name;
     }
 
-    public List<RaceStep> getSteps(){
+    public List<Step> getSteps(){
         return this.steps;
     }
 
-    public void addStep(RaceStep step){
+    public void addStep(Step step){
         this.steps.add(step);
     }
 
-    public void removeStep(RaceStep step){
+    public void removeStep(Step step){
         steps.remove(step);
     }
 

@@ -9,27 +9,29 @@
     android:padding="24dp">
 
     <TextView
+        android:id="@+id/txt_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/AppTheme.TextView.Title"
         android:textStyle="bold"
-        android:text="@string/title_create_step"/>
-    
+        tools:text="Title"/>
+
     <TextView
+        android:id="@+id/txt_body"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         style="@style/AppTheme.TextView.Body"
-        android:text="@string/body1_choose_name_step"/>
+        tools:text="Body text Body text Body text Body text Body text Body text "/>
 
     <EditText
-        android:id="@+id/edt_step"
+        android:id="@+id/edt_default"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginTop="8dp"
-        android:hint="@string/hint_step"
         android:inputType="textCapSentences"
-        tools:ignore="Autofill" />
+        tools:hint="Hint"
+        tools:ignore="Autofill,LabelFor" />
 
 
 
