@@ -22,7 +22,7 @@ public class ChampionshipAdapter extends OneLineAdapter<Championship> {
     @Override
     public void onClick(View view, Championship o) {
         Intent intent = new Intent(context, StepsActivity.class);
-        intent.putExtra(Program.ID_CHAMPIONSHIP, o);
+        intent.putExtra(Program.JSON_CHAMPIONSHIP, o);
         context.startActivity(intent);
         context.overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
     }

@@ -6,11 +6,13 @@ import java.util.List;
 
 import br.com.beirario.campeonatosvt.models.Championship;
 import br.com.beirario.campeonatosvt.models.Step;
+import br.com.beirario.campeonatosvt.models.Test;
 
 public class Program implements Serializable {
 
-    public static String ID_CHAMPIONSHIP = "id_championship";
-    public static String ID_STEP = "id_step";
+    public static String JSON_CHAMPIONSHIP = "json_championship";
+    public static String JSON_STEP = "json_step";
+    public static String JSON_TEST = "json_test";
 
     private static Program mInstance;
 
@@ -35,6 +37,11 @@ public class Program implements Serializable {
         Championship c = getChampionship(o.getParent());
         List<Step> steps = c.getSteps();
         return steps.get(steps.indexOf(o));
+    }
+
+    public Test getTest(Test o){
+        Step step = getStep(o.getParent());
+        return step.getTests().get(step.getTests().indexOf(o));
     }
 
     public void addChampionship(Championship championship){

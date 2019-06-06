@@ -31,7 +31,7 @@ public class TestsActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        step = (Step) getIntent().getSerializableExtra(Program.ID_STEP);
+        step = (Step) getIntent().getSerializableExtra(Program.JSON_STEP);
         step = Program.getInstance().getStep(step);
 
         adapter = new TestAdapter(this, step);

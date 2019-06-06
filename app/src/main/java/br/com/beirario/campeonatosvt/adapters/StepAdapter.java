@@ -25,7 +25,7 @@ public class StepAdapter extends OneLineAdapter<Step> {
     @Override
     public void onClick(View view, Step o) {
         Intent intent = new Intent(context, TestsActivity.class);
-        intent.putExtra(Program.ID_STEP, o);
+        intent.putExtra(Program.JSON_STEP, o);
         context.startActivity(intent);
         context.overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
     }

@@ -32,7 +32,7 @@ public class StepsActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        Championship o = (Championship) getIntent().getSerializableExtra(Program.ID_CHAMPIONSHIP);
+        Championship o = (Championship) getIntent().getSerializableExtra(Program.JSON_CHAMPIONSHIP);
         championship = Program.getInstance().getChampionship(o);
 
         adapter = new StepAdapter(this, championship);
