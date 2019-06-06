@@ -1,8 +1,11 @@
 package br.com.beirario.campeonatosvt.adapters;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import br.com.beirario.campeonatosvt.Program;
+import br.com.beirario.campeonatosvt.activities.BatteryActivity;
 import br.com.beirario.campeonatosvt.models.Step;
 import br.com.beirario.campeonatosvt.models.Test;
 import br.com.beirario.campeonatosvt.ui.Dialogs;
@@ -21,7 +24,10 @@ public class TestAdapter extends OneLineAdapter<Test> {
 
     @Override
     public void onClick(View view, Test o) {
-
+        Intent intent = new Intent(context, BatteryActivity.class);
+        intent.putExtra(Program.JSON_TEST, o);
+        context.startActivity(intent);
+        context.overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
     }
 
     @Override

@@ -25,6 +25,9 @@
         <activity
             android:name="br.com.beirario.campeonatosvt.activities.TestsActivity"
             android:label="@string/title_tests" />
+        <activity
+            android:name="br.com.beirario.campeonatosvt.activities.BatteryActivity"
+            android:label="@string/title_battery"/>
     </application>
 
 </manifest>
