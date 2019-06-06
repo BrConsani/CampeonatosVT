@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name="br.com.beirario.campeonatosvt.activities.RacePointsActivity"></activity>
         <activity
             android:name="br.com.beirario.campeonatosvt.activities.DashboardActivity"
             android:label="@string/title_championships">
@@ -27,7 +28,7 @@
             android:label="@string/title_tests" />
         <activity
             android:name="br.com.beirario.campeonatosvt.activities.RaceActivity"
-            android:label="@string/title_race"/>
+            android:label="@string/title_race" />
     </application>
 
 </manifest>
