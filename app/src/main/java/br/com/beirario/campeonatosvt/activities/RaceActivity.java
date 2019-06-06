@@ -1,8 +1,8 @@
 package br.com.beirario.campeonatosvt.activities;
 
 import android.app.AlertDialog;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -12,29 +12,31 @@ import java.util.Objects;
 
 import br.com.beirario.campeonatosvt.Program;
 import br.com.beirario.campeonatosvt.adapters.OneLineAdapter;
+import br.com.beirario.campeonatosvt.adapters.RaceAdapter;
 import br.com.beirario.campeonatosvt.adapters.TestAdapter;
+import br.com.beirario.campeonatosvt.models.Race;
 import br.com.beirario.campeonatosvt.models.Step;
 import br.com.beirario.campeonatosvt.models.Test;
 import br.com.beirario.campeonatosvt.ui.Dialogs;
 import br.com.beirario.campeonatovt.R;
 
-public class TestsActivity extends AppCompatActivity {
+public class RaceActivity extends AppCompatActivity {
 
-    private Step step;
+    private Test test;
     private OneLineAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tests);
+        setContentView(R.layout.activity_race);
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        step = (Step) getIntent().getSerializableExtra(Program.JSON_STEP);
-        step = Program.getInstance().getStep(step);
+        test = (Test) getIntent().getSerializableExtra(Program.JSON_TEST);
+        test = Program.getInstance().getTest(test);
 
-        adapter = new TestAdapter(this, step);
+        adapter = new RaceAdapter(this, test);
 
         RecyclerView recyclerView = findViewById(R.id.list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -42,11 +44,11 @@ public class TestsActivity extends AppCompatActivity {
     }
 
     public void OnClickAddButton(View view){
-        Dialogs.DialogBuilder builder = new Dialogs.OneEditTextDialog(this, R.string.txt_created_tests,
-                R.string.body1_create_test, R.string.hint_test);
+        Dialogs.DialogBuilder builder = new Dialogs.OneEditTextDialog(this, R.string.title_create_race,
+                R.string.body1_create_race, R.string.hint_race);
         builder.setPositiveButton(R.string.btn_create, ((dialog, which) -> {
             EditText name = ((AlertDialog) dialog).findViewById(R.id.edt_default);
-            step.addTest(new Test(name.getText().toString(), step));
+            test.addRace(new Race(name.getText().toString(), test));
             adapter.notifyItemInserted(adapter.getItemCount());
         }));
         builder.buildDialog().show();
@@ -63,5 +65,4 @@ public class TestsActivity extends AppCompatActivity {
         onBackPressed();
         return true;
     }
-
 }

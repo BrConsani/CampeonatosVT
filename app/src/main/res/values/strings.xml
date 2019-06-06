@@ -20,11 +20,15 @@
     <string name="menu_pilots">Pilotos</string>
     <string name="menu_discards">Descartes</string>
     <string name="title_tests">Provas</string>
-    <string name="title_create_tests">Provas criadas:</string>
+    <string name="txt_created_tests">Provas criadas:</string>
     <string name="title_create_test">Criar prova</string>
     <string name="body1_create_test">Escolha um nome para sua nova prova.</string>
     <string name="hint_test">Prova</string>
     <string name="body1_remove_test">Você realmente deseja remover a prova?</string>
-    <string name="title_create_battery">Baterias criadas:</string>
-    <string name="title_battery">Baterias</string>
+    <string name="txt_created_races">Corridas criadas:</string>
+    <string name="title_race">Corridas</string>
+    <string name="body1_remove_race">Você realmente deseja remover a corrida?</string>
+    <string name="title_create_race">Criar corrida</string>
+    <string name="body1_create_race">Escolha um nome para sua nova corrida.</string>
+    <string name="hint_race">Corrida</string>
 </resources>

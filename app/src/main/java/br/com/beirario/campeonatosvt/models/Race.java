@@ -12,16 +12,22 @@ import java.util.Map;
 
 public class Race implements Serializable {
 
+    private Test owner;
     private String name;
     private Map<Pilot, Integer> positions = new HashMap<>();
     private Pilot fastTurn;
 
-    public Race(String name){
+    public Race(String name, Test owner){
         this.name = name;
+        this.owner = owner;
     }
 
     public String getName(){
         return name;
+    }
+
+    public Test getParent(){
+        return owner;
     }
 
     public Map<Pilot, Integer> getPositions() {
